@@ -88,7 +88,7 @@ QString qSlicerModelClipModule::acknowledgementText()const
 QStringList qSlicerModelClipModule::contributors()const
 {
   QStringList moduleContributors;
-  moduleContributors << QString("Jun LIN, B.S; Xiaojun CHEN, Ph.D (SJTU)");
+  moduleContributors << QString("Jun LIN; Xiaojun CHEN, Ph.D (SJTU)");
   return moduleContributors;
 }
 
@@ -101,7 +101,7 @@ QIcon qSlicerModelClipModule::icon()const
 //-----------------------------------------------------------------------------
 QStringList qSlicerModelClipModule::categories() const
 {
-  return QStringList() << "Surface";
+  return QStringList() << "Surface Models";
 }
 
 //-----------------------------------------------------------------------------

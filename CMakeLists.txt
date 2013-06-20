@@ -3,12 +3,12 @@ cmake_minimum_required(VERSION 2.8.7)
 #-----------------------------------------------------------------------------
 if(NOT Slicer_SOURCE_DIR)
   set(EXTENSION_NAME ModelClip)
-  set(EXTENSION_HOMEPAGE "http://www.slicer.org/slicerWiki/index.php/Documentation/4.2/Extensions/ModelClip")
-  set(EXTENSION_CATEGORY "Examples")
-  set(EXTENSION_CONTRIBUTORS "Jun LIN, Xiaojun CHEN")
-  set(EXTENSION_DESCRIPTION "This work was part of the dissertation of my bachelor from SJTU.")
-  set(EXTENSION_ICONURL "http://viewvc.slicer.org/viewvc.cgi/Slicer4/trunk/Extensions/Testing/ModelClip/Resources/Icons/ModelClip.png?revision=19437&view=co")
-  set(EXTENSION_SCREENSHOTURLS "http://wiki.slicer.org/slicerWiki/images/4/42/Slicer-r19441-ModelClip-screenshot.png")
+  set(EXTENSION_HOMEPAGE "http://www.slicer.org/slicerWiki/index.php/Documentation/Nightly/Extensions/ModelClip")
+  set(EXTENSION_CATEGORY "Surface Models")
+  set(EXTENSION_CONTRIBUTORS "Jun LIN, Xiaojun CHEN, Ph.D (SJTU)")
+  set(EXTENSION_DESCRIPTION "This is an extension module to set the osteotomy trajectory with multiple planes and clip with just one click.")
+  set(EXTENSION_ICONURL "http://www.slicer.org/slicerWiki/index.php/File:ModelClipIcon.png")
+  set(EXTENSION_SCREENSHOTURLS "http://www.slicer.org/slicerWiki/index.php/File:ModelClipScreenShot.png")
 endif()
 
 #-----------------------------------------------------------------------------
