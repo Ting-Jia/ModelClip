@@ -117,7 +117,7 @@ QIcon qSlicerModelClipModule::icon()const
 //-----------------------------------------------------------------------------
 QStringList qSlicerModelClipModule::categories() const
 {
-  return QStringList() << "Surface";
+  return QStringList() << "Surface Models";
 }
 
 //-----------------------------------------------------------------------------
