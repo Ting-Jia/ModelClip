@@ -376,7 +376,7 @@ void qSlicerModelClipModuleWidget::clip()
 		vtkSmartPointer<vtkMRMLModelNode>::New();
 	sourceModel->Copy(sourceNode);
 	this->sourcePD->DeepCopy(sourceModel->GetPolyData());
-	this->clipper->SetInput(this->sourcePD);
+	this->clipper->SetInputData(this->sourcePD);
 
 	//	make the clipping surface using bool operation and set it as the clip
   //  function of the clipper - core part
@@ -426,7 +426,7 @@ void qSlicerModelClipModuleWidget::clip()
 		vtkSmartPointer<vtkMRMLModelStorageNode>::New();
 	resultDisplay->SetScene(mrmlScene);
 	resultStorage->SetScene(mrmlScene);
-	resultDisplay->SetInputPolyData(resultModel->GetPolyData());
+	resultDisplay->SetInputPolyDataConnection(resultModel->GetPolyDataConnection());
 	resultDisplay->SetColor(1.0, 0.0, 0.0);
 	resultStorage->SetFileName(resultName.toLatin1().data());
 	mrmlScene->AddNode(resultDisplay);
@@ -450,7 +450,7 @@ void qSlicerModelClipModuleWidget::clip()
 		vtkSmartPointer<vtkMRMLModelStorageNode>::New();
 	clippedDisplay->SetScene(mrmlScene);
 	clippedStorage->SetScene(mrmlScene);
-	clippedDisplay->SetInputPolyData(clippedModel->GetPolyData());
+	clippedDisplay->SetInputPolyDataConnection(clippedModel->GetPolyDataConnection());
 	clippedDisplay->SetColor(0.0, 1.0, 0.0);
 	clippedStorage->SetFileName(clippedName.toLatin1().data());
 	mrmlScene->AddNode(clippedDisplay);
