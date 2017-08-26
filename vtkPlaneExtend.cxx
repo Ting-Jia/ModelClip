@@ -1081,7 +1081,9 @@ double* vtkPlaneExtend::GetPoint3()
 
 void vtkPlaneExtend::GetPoint3(double xyz[3])
 {
-  xyz = this->GetPoint3();
+  xyz[0] = this->GetPoint3()[0];
+  xyz[1] = this->GetPoint3()[1];
+  xyz[2] = this->GetPoint3()[2];
 }
 
 // Description:
