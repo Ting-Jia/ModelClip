@@ -745,7 +745,6 @@ void vtkPlaneExtend::MovePoint3(double *p1, double *p2)
 {
   //Get the plane definition
   double *o = this->PlaneSource->GetOrigin();
-  double *pt1 = this->PlaneSource->GetPoint1();
   double *pt2 = this->PlaneSource->GetPoint2();
 
   //Get the vector of motion
@@ -759,24 +758,19 @@ void vtkPlaneExtend::MovePoint3(double *p1, double *p2)
   vtkMath::ProjectVector(vReal, p02, v);
 
   // Define vectors from point pt3
-  double p10[3], p20[3];
-  p10[0] = pt1[0] - o[0];
-  p10[1] = pt1[1] - o[1];
-  p10[2] = pt1[2] - o[2];
+  double p20[3];
   p20[0] = pt2[0] - o[0];
   p20[1] = pt2[1] - o[1];
   p20[2] = pt2[2] - o[2];
 
   double vN = vtkMath::Norm(v);
-  double n10 = vtkMath::Norm(p10);
   double n20 = vtkMath::Norm(p20);
 
   // Project v onto these vector to determine the amount of motion
   // Scale it by the relative size of the motion to the vector length
-  double d1 = (vN/n10) * vtkMath::Dot(v,p10) / (vN*n10);
   double d2 = (vN/n20) * vtkMath::Dot(v,p20) / (vN*n20);
 
-  double point1[3], point2[3];
+  double point2[3];
   for (int i=0; i<3; i++)
     {
     point2[i] = o[i] + (1.0+d2)*p20[i];
@@ -788,12 +782,11 @@ void vtkPlaneExtend::MovePoint3(double *p1, double *p2)
   this->PositionHandles();
 }
 
-void vtkPlaneExtend::Rotate(double *p1, double *p2, double *vpn)
+void vtkPlaneExtend::Rotate(double *p1, double *p2, double *vtkNotUsed(vpn))
 {
   double *o = this->PlaneSource->GetOrigin();
   double *pt1 = this->PlaneSource->GetPoint1();
   double *pt2 = this->PlaneSource->GetPoint2();
-  double *center = this->PlaneSource->GetCenter();
 
   double v[3]; //vector of motion
   double axis[3]; //axis of rotation
