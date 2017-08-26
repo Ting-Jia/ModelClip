@@ -226,7 +226,6 @@ void qSlicerModelClipModuleWidget::removePlane()
       pt2 = this->planeList.last()->getPlaneSource()->GetPoint2();
       delete this->planeList.last();
       this->planeList.removeLast();
-      int index = this->planeList.indexOf(this->planeList.last());
       this->planeExtend->SetOrigin(o);
       this->planeExtend->SetPoint1(pt1);
       this->planeExtend->SetPoint2(pt2);
@@ -323,7 +322,6 @@ void qSlicerModelClipModuleWidget::setDepth()
     double *oP2 = new double[3];
     double *pt1 = new double[3];
     double *axis = new double[3];
-    double *axisNorm = new double[3];
     vtkMath::Subtract(this->planeWidget->GetPoint2(), 
       this->planeWidget->GetOrigin(), oP2);
     vtkMath::Subtract(this->planeWidget->GetPoint1(), 
