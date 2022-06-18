@@ -7,8 +7,8 @@ if(NOT Slicer_SOURCE_DIR)
   set(EXTENSION_CATEGORY "Surface Models")
   set(EXTENSION_CONTRIBUTORS "Jun LIN, Xiaojun CHEN, Ph.D (SJTU)")
   set(EXTENSION_DESCRIPTION "This is an extension module to set the osteotomy trajectory with multiple planes and clip with just one click.")
-  set(EXTENSION_ICONURL "http://www.slicer.org/slicerWiki/index.php/File:ModelClipIcon.png")
-  set(EXTENSION_SCREENSHOTURLS "http://www.slicer.org/slicerWiki/index.php/File:ModelClipScreenShot.png")
+  set(EXTENSION_ICONURL "https://raw.githubusercontent.com/Ting-Jia/ModelClip/master/Resources/Icons/ModelClip.png")
+  set(EXTENSION_SCREENSHOTURLS "https://raw.githubusercontent.com/Ting-Jia/ModelClip/master/ModelClipScreenShot.png")
 endif()
 
 #-----------------------------------------------------------------------------
